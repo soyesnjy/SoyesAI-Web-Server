@@ -26,6 +26,7 @@ app.use(
     origin: [
       "https://soyeskids.co.kr:4040",
       "https://soyes-ai-project.vercel.app",
+      "https://soyes-ai-web.vercel.app", // soyesnjy 계정 vercel 배포 URL
       "https://www.soyeskids.store",
       "http://localhost:3000",
       "http://localhost:3001",
