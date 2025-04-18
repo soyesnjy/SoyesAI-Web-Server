@@ -54,64 +54,6 @@ const youtube = google.youtube({
 
 const drive = google.drive({ version: "v3", auth: auth_google_drive });
 
-// google drive 파일 전체 조회 메서드
-// async function listFiles() {
-//   try {
-//     const res = await drive.files.list({
-//       pageSize: 10,
-//       fields: "nextPageToken, files(id, name)",
-//     });
-
-//     const files = res.data.files;
-//     if (files.length) {
-//       console.log("Files:");
-//       files.map((file) => {
-//         console.log(`${file.name} (${file.id})`);
-//       });
-//     } else {
-//       console.log("No files found.");
-//     }
-//   } catch (error) {
-//     console.error(`An error occurred: ${error}`);
-//   }
-// }
-// listFiles();
-
-// google drive 파일 전체 삭제 메서드
-// async function deleteAllFiles() {
-//   try {
-//     // 파일 목록 가져오기
-//     const res = await drive.files.list({
-//       pageSize: 1000, // 한 번에 최대 1000개의 파일 가져오기
-//       fields: "files(id, name)",
-//     });
-
-//     const files = res.data.files;
-//     if (files.length === 0) {
-//       console.log("No files found.");
-//       return;
-//     }
-
-//     // 파일 삭제
-//     for (const file of files) {
-//       try {
-//         await drive.files.delete({ fileId: file.id });
-//         console.log(`Deleted file: ${file.name} (${file.id})`);
-//       } catch (error) {
-//         console.error(
-//           `Failed to delete file: ${file.name} (${file.id})`,
-//           error.message
-//         );
-//       }
-//     }
-
-//     console.log("All files deleted successfully.");
-//   } catch (error) {
-//     console.error("An error occurred while deleting files:", error.message);
-//   }
-// }
-// deleteAllFiles();
-
 // 동기식 DB 접근 함수 1. Promise 생성 함수
 function queryAsync(connection, query, parameters) {
   return new Promise((resolve, reject) => {
